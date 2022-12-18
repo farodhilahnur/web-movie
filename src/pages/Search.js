@@ -22,7 +22,7 @@ export default function Search(props) {
 
     const onChangeSort = (e) => {
         setSort(e.target.value)
-        getMovies(e.target.value)
+        getMovies(e.target.value, genre)
     }
 
     const onChangeGenre = (e) => {
