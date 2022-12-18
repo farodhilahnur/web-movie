@@ -12,21 +12,19 @@ export default function Header() {
     }
     return (
         <>
-            <Navbar className='navbar-header'>
-                <Container>
+            <Navbar style={{ backgroundColor: 'rgba(3,37,65,1)', position: 'fixed', width: '100%' }}>
+                <Container style={{ paddingLeft: '20px' }}>
                     <Navbar.Brand href="/">
-                        <div className='fs-4 blue-primary fw-semibold'>
+                        <div className='text-white fs-4 blue-primary fw-semibold'>
                             MoviesSehat
 
                         </div>
                     </Navbar.Brand>
+
                     <Navbar.Toggle />
                     <Nav className="justify-content-end flex-grow-1 pe-3">
-                        <Nav.Link href="/artikel">Artikel</Nav.Link>
-                        <Nav.Link href="/hospital">Info Rumah Sakit</Nav.Link>
-                        <Button className="fw-normal ms-4" onClick={btnClick}>
-                            Tanya Dokter
-                        </Button>
+                        <Nav.Link href="/movies"><span className='text-white font-medium'>Movies</span></Nav.Link>
+
                     </Nav>
                 </Container>
             </Navbar>

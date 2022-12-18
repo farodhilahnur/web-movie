@@ -20,7 +20,7 @@ const SinglePage = () => {
   const fetchData = async () => {
     try {
       const { data } = await axios.get(` 
-      https://639eec4f5eb8889197efde56.mockapi.io/list/${id}`);
+      https://6311f91ef5cba498da8988fd.mockapi.io/api/v1/movies/${id}`);
       // eslint-disable-next-line
       setContent(data);
     } catch (error) {
@@ -38,37 +38,37 @@ const SinglePage = () => {
   return (
     <>
       <Header></Header>
-        <>
-          <div className="bg">
-            {content && (
-              <div className="open__modal">
-                <img
-                  className="poster__img"
-                  src={content.picture} alt="a"/>
+      <>
+        <div className="bg pt-5">
+          {content && (
+            <div className="open__modal">
+              <img
+                className="poster__img"
+                src={content.picture} alt="a" />
 
-                <div className="open__detailsPage">
-                  <h3>{content.title }</h3>
-                  <h5 style={{ display: "flex", fontSize: "12px"}} className="genreList" >Genre : {content.genre }</h5>
-              
-                  <div className="overview">
-                    <p>{content.overview}</p>
-                  </div>
-                  <div>
+              <div className="open__detailsPage">
+                <h3>{content.title}</h3>
+                <h5 style={{ display: "flex", fontSize: "12px" }} className="genreList" >Genre : {content.genre}</h5>
+
+                <div className="overview">
+                  <p>{content.overview}</p>
+                </div>
+                <div>
                   <Button onClick={handleShow}>Lihat Trailer</Button>
                   <Modal show={show} onHide={handleClose}>
-                  <div className="modal-video">
-                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${content.key}`} title="YouTube video player" frameBorder={"0"} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                  </div>
-                    
+                    <div className="modal-video">
+                      <iframe width="560" height="315" src={`https://www.youtube.com/embed/${content.key}`} title="YouTube video player" frameBorder={"0"} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    </div>
+
                   </Modal>
-                  </div>
-                  
                 </div>
+
               </div>
-            )}   
-          </div>
-        </>
-      
+            </div>
+          )}
+        </div>
+      </>
+
     </>
   );
 };

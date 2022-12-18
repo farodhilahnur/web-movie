@@ -5,8 +5,10 @@ import {
   Route
 } from "react-router-dom";
 import Movies from './pages/Movies';
-import SinglePage from "./components/SingleContentPage/SinglePage";
+import Search from './pages/Search';
 
+import SinglePage from "./components/SingleContentPage/SinglePage";
+import '../src/App.css'
 function App() {
 
 
@@ -16,6 +18,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Movies />} />
+            <Route path="/movies" element={<Search />} />
             <Route path="/movie/:id" element={<SinglePage />} />
           </Routes >
         </Router >
